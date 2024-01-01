@@ -6,6 +6,7 @@ const News = () => {
   const [news, setNews] = useState([]);
   // const [loading,setLoading] = usesate(false)
   const [page, setPage] = useState(1);
+  const [hasNextPage, setHasNextPage]=useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,7 +14,16 @@ const News = () => {
         const response = await axios.get(
           `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4aab3b8455d948c9b0c8fe6626d09d53&page=${page}`
         );
-        setNews(response.data.articles);
+        const newArticles=response.data.articles;
+
+          if ( newArticles.length===0) {
+          
+            setHasNextPage(false);
+
+          } else {
+            setNews(newArticles);
+            setHasNextPage(true);
+          }
       } catch (error) {
         console.log('Error fetching Data', error);
       }
@@ -24,11 +34,14 @@ const News = () => {
   const handlePrevClick = () => {
     if (page > 1) {
       setPage(page - 1);
+      
     }
   };
 
   const handleNextClick = () => {
-    setPage(page + 1);
+    if(hasNextPage);
+     setPage(page+1);
+
   };
 
   return (
@@ -52,6 +65,7 @@ const News = () => {
           &larr; Previous
         </button>
         <button
+        disabled={!hasNextPage}
           type='button'
           className='bg-black hover:bg-slate-900 text-white font-bold py-2 px-4 rounded'
           onClick={handleNextClick}
