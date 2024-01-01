@@ -1,0 +1,264 @@
+
+const articles= [
+    {
+      "source": {
+        "id": null,
+        "name": "CBS Sports"
+      },
+      "author": "Tyler Sullivan",
+      "title": "Ravens vs. 49ers score: Baltimore throttles Brock Purdy, San Francisco as Lamar Jackson makes MVP case - CBS Sports",
+      "description": "Baltimore is now 12-3 on the season and closing in on the AFC's top seed",
+      "url": "https://www.cbssports.com/nfl/news/ravens-vs-49ers-score-baltimore-throttles-brock-purdy-san-francisco-as-lamar-jackson-makes-mvp-case/live/",
+      "urlToImage": "https://sportshub.cbsistatic.com/i/r/2023/12/26/53db9c72-8b84-47a6-8c80-0caa76c33c4f/thumbnail/1200x675/3e5a63766450b4f287612f56444835ba/ravens-jpeg.jpg",
+      "publishedAt": "2023-12-26T04:34:16Z",
+      "content": "The Baltimore Ravens have put the rest of the NFL on notice. In what was billed as a potential Super Bowl preview as Lamar Jackson and Co. traveled to Santa Clara and delivered a 33-19 shellacking on… [+1765 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Yahoo Entertainment"
+      },
+      "author": "Yahoo Sports Staff",
+      "title": "NBA Christmas Day: Mavericks vs. Suns; score, highlights, updates, news - Yahoo Sports",
+      "description": "Five NBA games are on the Christmas menu with Kevin Durant and Luka Doncic starring in the finale.",
+      "url": "https://sports.yahoo.com/nba-christmas-day-mavericks-vs-suns-score-highlights-updates-news-222037874.html",
+      "urlToImage": "https://s.yimg.com/ny/api/res/1.2/Le51QeFbXLa_qlSI8HfByQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD04MDA-/https://s.yimg.com/os/creatr-uploaded-images/2023-12/51b38a10-a386-11ee-afff-7eddcc8409a3",
+      "publishedAt": "2023-12-26T03:57:00Z",
+      "content": "End of 2nd Quarter: Mavericks 64, Suns 54\r\nLuka Doncic: 24 PTS, 3 REB, 8 ASTDereck Lively II: 10 PTS, 6 REB, 1 ASTTim Hardaway Jr.: 11 PTS, 1 REB, 1 AST\r\nChimezie Metu: 13 PTS, 10 REB, 2 ASTDevin Boo… [+105 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "HuffPost"
+      },
+      "author": "Jillian Wilson",
+      "title": "7 Things Stroke Doctors Advise Against - BuzzFeed",
+      "description": "Strokes are the fifth leading cause of death in the United States. But there are ways you can lower your risk.",
+      "url": "https://www.huffpost.com/entry/stroke-prevention-advice-from-doctors_l_64f23fe9e4b04f9a01e8e1e2",
+      "urlToImage": "https://img.huffingtonpost.com/asset/64f8d7ed2600006000f22168.jpeg?cache=PCVJUISoNy&ops=1200_630",
+      "publishedAt": "2023-12-26T03:16:03Z",
+      "content": "It's important to lead an active lifestyle, eat nutritious foods and manage things like your blood pressure, doctors say.\r\nIn the United States, strokes are a top cause of death and a major cause of … [+8876 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "KABC-TV"
+      },
+      "author": null,
+      "title": "Powerball results in for $638 million Christmas Day jackpot drawing - KABC-TV",
+      "description": "Someone out there may be getting the gift of serious cash this Christmas Day. The Powerball jackpot is currently at $638 million for Monday night's drawing.",
+      "url": "https://abc7.com/powerball-numbers-jackpot-christmas-day-drawing-2023-lottery-winning/14223896/",
+      "urlToImage": "https://cdn.abcotvs.com/dip/images/13835863_092723-cc-ap-powerball-ticket-generic-img.jpg?w=1600",
+      "publishedAt": "2023-12-26T03:08:01Z",
+      "content": "SAN FRANCISCO -- Someone out there may be getting the gift of serious cash this Christmas Day. The numbers are in for Monday's Christmas Day Powerball drawing.\r\nThe numbers are: 5, 12, 20, 24, 29 and… [+645 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "WPVI-TV"
+      },
+      "author": null,
+      "title": "TV actor Kamar de los Reyes of 'One Life to Live' and 'Call of Duty' dies at 56 - WPVI-TV",
+      "description": "Kamar de los Reyes, a television, movie and voice actor best known for playing a gang member-turned-cop in the soap \"One Life to Live\" and a villain in the video game \"Call of Duty: Black Ops II,\" has died in Los Angeles at 56, the family announced.",
+      "url": "https://6abc.com/kamar-de-los-reyes-celebrity-deaths-2023-one-life-to-live-actor-dies-call-of-duty-black-ops-ii/14224330/",
+      "urlToImage": "https://cdn.abcotvs.com/dip/images/14224347_obit-de-los-reyes-clean-AP-TN-img.jpg?w=1600",
+      "publishedAt": "2023-12-26T02:56:20Z",
+      "content": "LOS ANGELES -- Kamar de los Reyes, a television, movie and voice actor best known for playing a gang member-turned-cop in the soap \"One Life to Live\" and a villain in the video game \"Call of Duty: Bl… [+1770 chars]"
+    },
+    {
+      "source": {
+        "id": "cnn",
+        "name": "CNN"
+      },
+      "author": "Alaa Elassar, Dave Alsup",
+      "title": "Blizzard expected to blast the US Plains and cause travel delays - CNN",
+      "description": "Blizzard warnings have been issued across the Central Plains, threatening Christmas Day travelers with delays and dangerous road conditions.",
+      "url": "https://www.cnn.com/2023/12/25/travel/blizzard-nebraska-south-dakota-colorado-travel-delays/index.html",
+      "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/231225172328-01-winter-weather-1225.jpg?c=16x9&q=w_800,c_fill",
+      "publishedAt": "2023-12-26T02:50:00Z",
+      "content": "Blizzard warnings have been issued across the Central Plains, threatening Christmas Day travelers with delays and dangerous road conditions.\r\nMore than 1.1 million people in parts of Nebraska, South … [+4187 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Vatican News"
+      },
+      "author": "Vatican News",
+      "title": "Pope at Christmas Mass: Let us fix our eyes on the True God - Vatican News - English",
+      "description": "Pope Francis presides at the Christmas Mass During the Night in St Peter’s Basilica, and says that \"the wonder of Christmas\" is that an infinite God \"becomes finite for our sake.\"",
+      "url": "https://www.vaticannews.va/en/pope/news/2023-12/pope-francis-christmas-eve-mass-st-peter-s.html",
+      "urlToImage": "https://www.vaticannews.va/content/dam/vaticannews/agenzie/images/srv/2023/12/24/2023-12-24-santa-messa-in-occasione-del-natale-del-signore/1703443722796.JPG/_jcr_content/renditions/cq5dam.thumbnail.cropped.1500.844.jpeg",
+      "publishedAt": "2023-12-26T02:48:32Z",
+      "content": "By Joseph Tulloch\r\nA census of the whole earth.\r\nThats how Pope Francis began his homily for Christmas Mass during the Night\r\n in St Peters Basilica, quoting directly from the Gospel according to St … [+2624 chars]"
+    },
+    {
+      "source": {
+        "id": "associated-press",
+        "name": "Associated Press"
+      },
+      "author": "HANNAH SCHOENBAUM",
+      "title": "Marjorie Taylor Greene targeted by failed Christmas swatting attempt - The Associated Press",
+      "description": "Republican U.S. Rep. Marjorie Taylor Greene has been targeted with another swatting attempt at her Georgia residence. The Rome Police Department in Georgia quickly verified that the call was a hoax and did not send officers to Greene's house. A man in New Yor…",
+      "url": "https://apnews.com/article/marjorie-taylor-greene-swatting-georgia-christmas-2081fd3835512cc3180aa1171fc5913d",
+      "urlToImage": "https://dims.apnews.com/dims4/default/8612b3c/2147483647/strip/true/crop/4340x2441+0+226/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F52%2F5e%2Fe5fdd043ab455b163acad6e4cadf%2F542e05d2b57b4dc6b626fec011f45981",
+      "publishedAt": "2023-12-26T02:43:00Z",
+      "content": "Republican U.S. Rep. Marjorie Taylor Greene was the target of a swatting attempt at her Georgia residence on Christmas morning, the congresswoman and local police said, marking the latest instance of… [+3118 chars]"
+    },
+    {
+      "source": {
+        "id": "reuters",
+        "name": "Reuters"
+      },
+      "author": "Reuters",
+      "title": "Ukraine carries out air assault on Crimea's port of Feodosia - Reuters",
+      "description": null,
+      "url": "https://www.reuters.com/world/europe/ukraine-carries-out-air-assault-crimeas-port-feodosia-2023-12-26/",
+      "urlToImage": null,
+      "publishedAt": "2023-12-26T02:41:53Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Department of Defense"
+      },
+      "author": null,
+      "title": "Statement from Secretary of Defense Lloyd J. Austin III on U.S. Strikes in Iraq - Department of Defense",
+      "description": "Secretary of Defense Lloyd J. Austin III's statement on U.S. Strikes in Iraq.",
+      "url": "https://www.defense.gov/News/Releases/Release/Article/3626180/statement-from-secretary-of-defense-lloyd-j-austin-iii-on-us-strikes-in-iraq/",
+      "urlToImage": "https://media.defense.gov/2021/Sep/30/2002865254/1280/1280/0/210930-D-EX074-055.JPG",
+      "publishedAt": "2023-12-26T02:16:02Z",
+      "content": "Today, at President Biden's direction, U.S. military forces conducted necessary and proportionate strikes on three facilities used by Kataib Hezbollah and affiliated groups in Iraq. These precision s… [+848 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "[Removed]"
+      },
+      "author": null,
+      "title": "[Removed]",
+      "description": "[Removed]",
+      "url": "https://removed.com",
+      "urlToImage": null,
+      "publishedAt": "1970-01-01T00:00:00Z",
+      "content": "[Removed]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "[Removed]"
+      },
+      "author": null,
+      "title": "[Removed]",
+      "description": "[Removed]",
+      "url": "https://removed.com",
+      "urlToImage": null,
+      "publishedAt": "1970-01-01T00:00:00Z",
+      "content": "[Removed]"
+    },
+    {
+      "source": {
+        "id": "axios",
+        "name": "Axios"
+      },
+      "author": "Axios",
+      "title": "FBI investigates threats to Colorado judges in Trump case, Denver police bolster patrols - Axios",
+      "description": null,
+      "url": "https://www.axios.com/2023/12/25/colorado-supreme-court-threats-fbi-trump-ballot-ruling",
+      "urlToImage": null,
+      "publishedAt": "2023-12-26T00:46:53Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Heat.com"
+      },
+      "author": "Marc D'Amico",
+      "title": "Keys to the Game: Celtics 126, Lakers 115 - NBA.com",
+      "description": null,
+      "url": "https://www.nba.com/celtics/news/gamerecap-keys-20231225-boslal",
+      "urlToImage": "https://cdn.nba.com/teams/uploads/sites/1610612738/2023/12/jaylen-3.jpg",
+      "publishedAt": "2023-12-26T00:37:00Z",
+      "content": "Theres an old saying that defense leads to offense. Thats exactly what happened for the Boston Celtics at the most critical moments of their Christmas Day matchup with the Lakers in LA.\r\nThere arent … [+2917 chars]"
+    },
+    {
+      "source": {
+        "id": "fortune",
+        "name": "Fortune"
+      },
+      "author": "The Associated Press",
+      "title": "Southwest Airlines cancels hundreds, delays thousands of holiday weekend flights - Fortune",
+      "description": "Just 2% of the airline’s flights were canceled Monday, though 16% were delayed, which is 693 flights total, according to FlightAware.",
+      "url": "https://fortune.com/2023/12/25/southwest-airlines-cancels-hundreds-delays-thousands-holiday-christmas-weekend-flights-travel/",
+      "urlToImage": "https://content.fortune.com/wp-content/uploads/2023/12/GettyImages-521922588-e1703550523879.jpg?resize=1200,600",
+      "publishedAt": "2023-12-26T00:31:00Z",
+      "content": "Conditions were mostly nice this year for travelers flying ahead of and on Christmas, but some naughty disruptions again plagued those flying with Southwest Airlines.For millions of people traveling … [+2362 chars]"
+    },
+    {
+      "source": {
+        "id": "the-wall-street-journal",
+        "name": "The Wall Street Journal"
+      },
+      "author": "Douglas Belkin, Melissa Korn",
+      "title": "As Pressure on Harvard President Increases, University Board Feels the Squeeze - The Wall Street Journal",
+      "description": "Critics of Harvard Corporation call for resignations, fault the board’s insularity for recent missteps",
+      "url": "https://www.wsj.com/us-news/education/as-pressure-on-harvard-president-increases-university-board-feels-the-squeeze-dd6f3901",
+      "urlToImage": "https://images.wsj.net/im-905191/social",
+      "publishedAt": "2023-12-26T00:08:00Z",
+      "content": "Harvard University faculty are calling for members of its governing board to step down as a way to reset the university as it struggles with historic reputational damage and \r\ndemands for the resigna… [+356 chars]"
+    },
+    {
+      "source": {
+        "id": "reuters",
+        "name": "Reuters"
+      },
+      "author": "Reuters",
+      "title": "Russia's Navalny tracked down to 'Polar Wolf' prison in the Arctic - Reuters",
+      "description": null,
+      "url": "https://www.reuters.com/world/europe/russias-navalny-is-prison-colony-yamal-nenets-region-spokeswoman-2023-12-25/",
+      "urlToImage": null,
+      "publishedAt": "2023-12-25T23:35:43Z",
+      "content": null
+    },
+    {
+      "source": {
+        "id": "al-jazeera-english",
+        "name": "Al Jazeera English"
+      },
+      "author": "Al Jazeera",
+      "title": "Ukraine officially celebrates Christmas on December 25 for the first time - Al Jazeera English",
+      "description": "Change reflects Ukrainians’ dismay at 22-month-old Russian invasion and their assertion of a national identity.",
+      "url": "https://www.aljazeera.com/news/2023/12/25/ukraine-officially-celebrates-christmas-on-december-25-for-the-first-time",
+      "urlToImage": "https://www.aljazeera.com/wp-content/uploads/2023/12/2023-12-25T182237Z_1304970225_RC2E45ACX3OO_RTRMADP_3_CHRISTMAS-SEASON-UKRAINE-1703534455.jpg?resize=1920%2C1440",
+      "publishedAt": "2023-12-25T23:28:36Z",
+      "content": "Ukrainians have celebrated Christmas on December 25 for the first time, as part of an ongoing effort to remove Russian influence from their country.\r\nThe change was enacted in a law signed by Preside… [+2112 chars]"
+    },
+    {
+      "source": {
+        "id": null,
+        "name": "Daily Beast"
+      },
+      "author": "AJ McDougall",
+      "title": "Iran Vows Israel 'Will Pay' After Airstrike Kills Senior Commander Sayyad Razi Mousavi - The Daily Beast",
+      "description": "Iran warned that Israel “will pay” for the killing of Sayyad Razi Mousavi, a senior military adviser known as a close companion to the assassinated general Qasem Soleimani.",
+      "url": "https://www.thedailybeast.com/iran-vows-israel-will-pay-after-airstrike-kills-senior-commander-sayyad-razi-mousavi",
+      "urlToImage": "https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_450,w_800,x_0,y_0/dpr_2.0/c_limit,w_740/fl_lossy,q_auto/v1703531326/2023-12-25T184520Z_1606972806_RC2I45A73A9M_RTRMADP_3_SYRIA-ISRAEL-IRAN_vbt1ms",
+      "publishedAt": "2023-12-25T22:51:19Z",
+      "content": "A senior adviser in Irans Revolutionary Guard Corps was killed in an Israeli airstrike outside the Syrian capital of Damascus on Monday, according to Iranian state media. Three security sources later… [+1420 chars]"
+    },
+    {
+      "source": {
+        "id": "cbs-news",
+        "name": "CBS News"
+      },
+      "author": "David Schuman",
+      "title": "Record high temperature recorded in Minnesota on Christmas Day - CBS News",
+      "description": "The low temperature on Christmas Eve, which took place at midnight, tied the highest temperature ever recorded on that day in the Twin Cities.",
+      "url": "https://www.cbsnews.com/minnesota/news/record-high-temperature-recorded-in-minnesota-on-christmas-day/",
+      "urlToImage": "https://assets2.cbsnewsstatic.com/hub/i/r/2023/12/25/b736a0f5-7112-438b-82e6-b72f5d734466/thumbnail/1200x630/6b7b2d4d97ea0e12aef0c50fcbbdf39c/story-1-wet-christmas-wcco4kqz.jpg?v=5382e209c94ee904b3a96a69f8ca0ce0",
+      "publishedAt": "2023-12-25T22:35:00Z",
+      "content": "MINNEAPOLIS — Monday's gloomy and gray Christmas feels right in line with the rest of the unusual weather the past weekend.\r\n\"This is a warm system in a cold time of year, and it's really noticeable … [+1897 chars]"
+    }
+  ]
+  export default articles;
