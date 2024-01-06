@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Newsitem from './Newsitem';
 import axios from 'axios';
 import { Spinner } from './Spinner';
+import propTypes from 'prop-types'
+
 
 const News = (props) => {
   const [news, setNews] = useState([]);
@@ -14,7 +16,7 @@ const News = (props) => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4aab3b8455d948c9b0c8fe6626d09d53&page=${page}&pageSize=${props.pageSize}`
+          `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=4aab3b8455d948c9b0c8fe6626d09d53&page=${page}&pageSize=${props.pageSize}`
         );
         const newArticles = response.data.articles;
 
@@ -31,7 +33,8 @@ const News = (props) => {
       }
     };
     fetchData();
-  }, [page]);
+  }, [page,props.country,props.category,props.pageSize]);
+
 
   const handlePrevClick = () => {
     if (page > 1) {
@@ -77,5 +80,17 @@ const News = (props) => {
     </>
   );
 };
+
+  News.propTypes = {
+  country: propTypes.string.isRequired,
+  category: propTypes.string.isRequired,
+  pageSize: propTypes.number.isRequired
+}
+
+  News.defaultProps = {
+   country:'in',
+   category:'bussiness',
+   pageSize:8
+}
 
 export default News;
