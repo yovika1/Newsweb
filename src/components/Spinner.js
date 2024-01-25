@@ -1,5 +1,6 @@
 import React from 'react'
-import Growing from './Growing ring.gif'
+
+import Growing from './pikloader.gif'
 export const Spinner = () => {
   return (
    

@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Newsitem from './Newsitem';
 import axios from 'axios';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import { Spinner } from './Spinner';
-import propTypes from 'prop-types'
-
+import propTypes from 'prop-types';
 
 const News = (props) => {
   const [news, setNews] = useState([]);
@@ -12,85 +12,80 @@ const News = (props) => {
   const [hasNextPage, setHasNextPage] = useState(true);
 
   useEffect(() => {
+    console.log("first" , process.env.REACT_APP_API_KEY)
     const fetchData = async () => {
       try {
         setLoading(true);
         const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=4aab3b8455d948c9b0c8fe6626d09d53&page=${page}&pageSize=${props.pageSize}`
+          `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${process.env.REACT_APP_API_KEY}&page=${page}&pageSize=${props.pageSize}`
         );
         const newArticles = response.data.articles;
 
         if (newArticles.length === 0) {
           setHasNextPage(false);
         } else {
-          setNews(newArticles);
+          setNews((prevNews) => [...prevNews, ...newArticles]);
           setHasNextPage(true);
         }
       } catch (error) {
         console.log('Error fetching Data', error);
       } finally {
-        setLoading(false); 
+        setLoading(false);
       }
     };
+
     fetchData();
-  }, [page,props.country,props.category,props.pageSize]);
+  }, [page, props.country, props.category, props.pageSize, props.apiKey]);
 
-
-  const handlePrevClick = () => {
-    if (page > 1) {
-      setPage(page - 1);
-    }
-  };
-
-  const handleNextClick = () => {
-    if (hasNextPage) setPage(page + 1);
-  };
+  useEffect(() => {
+    setPage(1);
+  }, []);
 
   return (
-    <>
-      <div className=' my-3'>
-        <p className='justify-center text-3xl font-bold font-serif flex'>News Top Headlines</p>
-        <div className='container w-full flex-wrap justify-center flex'>
-          {!loading&& news.map((item, index) => (
-            <div className='col-span-4' key={index}>
-              <Newsitem title={item.title} description={item.description} imageUrl={item.urlToImage} newsurl={item.url} />
-            </div>
-          ))}
-           {loading && <Spinner />}
+    <div className={` ${props.darkMode ? 'bg-black text-white' : 'bg-slate-50 text-black'}`}>
+      <p className='justify-center text-3xl font-bold font-serif flex my-24 text-'>
+        News Top Headlines - {props.category.charAt(0).toUpperCase() + props.category.slice(1)}
+      </p>
+
+      <InfiniteScroll
+        dataLength={news.length}
+        next={() => setPage((prevPage) => prevPage + 1)}
+        hasMore={hasNextPage}
+        loader={<Spinner />}
+      >
+        <div className={`container w-full flex-wrap justify-center flex ${props.darkMode ? 'bg-black text-white' : 'bg-slate-50 text-black'}`} >
+          {!loading &&
+            news.map((item, index) => (
+              <div className='col-span-4' key={index}>
+                <Newsitem
+                  title={item.title}
+                  description={item.description}
+                  imageUrl={item.urlToImage}
+                  newsurl={item.url}
+                  Author={item.author}
+                  Date={item.publishedAt}
+                  darkMode={props.darkMode}
+                />
+              </div>
+            ))}
         </div>
-        <div className='container px-4 lg:px-48 w-full mx-auto flex justify-between items-center' >
-          <button
-            disabled={page === 1}
-            type='button'
-            className='bg-black hover:bg-slate-900 outline-black text-white font-bold py-2 px-4 rounded '
-            onClick={handlePrevClick}
-          >
-            &larr; Previous
-          </button>
-          <button
-            disabled={!hasNextPage}
-            type='button'
-            className='bg-black hover:bg-slate-900 text-white font-bold py-2 px-4 rounded'
-            onClick={handleNextClick}
-          >
-            Next &rarr;
-          </button>
-        </div>
-      </div>
-    </>
+      </InfiniteScroll>
+    </div>
   );
 };
 
-  News.propTypes = {
+News.propTypes = {
   country: propTypes.string.isRequired,
   category: propTypes.string.isRequired,
-  pageSize: propTypes.number.isRequired
-}
+  pageSize: propTypes.number.isRequired,
+  // apiKey: propTypes.string.isRequired,
+  darkMode: propTypes.bool.isRequired,
+};
 
-  News.defaultProps = {
-   country:'in',
-   category:'bussiness',
-   pageSize:8
-}
+News.defaultProps = {
+  country: 'in',
+  category: 'general',
+  pageSize: 8,
+};
 
 export default News;
