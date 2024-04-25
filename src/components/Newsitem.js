@@ -10,11 +10,7 @@ const Newsitem = (props) => {
     <div className={`p-7 md:w-64 lg:w-96 sm:mx-auto rounded overflow-hidden shadow-lg mx-5`} style={cardStyle}>
       <img
         alt="content"
-        src={
-          !props.imageUrl
-            ? "https://images.wsj.net/im-905191/social"
-            : props.imageUrl
-        }
+        src={props.imageUrl}
         className={`w-full h-auto ${props.darkMode ? 'filter-invert' : ''}`}
       />
       <div>
