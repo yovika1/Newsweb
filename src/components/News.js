@@ -77,7 +77,7 @@ const News = (props) => {
                 <Newsitem
                   title={item.title}
                   description={item.description}
-                  imageUrl={item.photo_url}
+                  imageUrl={"https://media.istockphoto.com/id/1286112932/vector/whats-new-symbol-special-offer-sign-vector.jpg?s=612x612&w=0&k=20&c=1fbCR2tDbn_Js9Va27pA7J6nfG0okJHQItVPx3Yq1MQ="}
                   newsurl={item.link}
                   Author={item.author}
                   Date={item.published_datetime_utc}
